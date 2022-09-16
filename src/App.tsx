@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { QueryClient, QueryClientProvider } from "react-query";
+import { ReactQueryDevtools } from "react-query/devtools";
 import Navbar from "./components/Navbar";
 import People from "./components/People";
 import Planets from "./components/Planets";
@@ -7,7 +8,7 @@ import { pageConstants } from "./constants/AppContants";
 
 function App() {
   const queryClient = new QueryClient();
-  const [page, setPage] = useState<string>(pageConstants.PEOPLE);
+  const [page, setPage] = useState<string>(pageConstants.PLANETS);
 
   return (
     <QueryClientProvider client={queryClient}>
@@ -18,6 +19,7 @@ function App() {
           {page === pageConstants.PLANETS ? <Planets /> : <People />}
         </div>
       </div>
+      <ReactQueryDevtools initialIsOpen={false} />
     </QueryClientProvider>
   );
 }
