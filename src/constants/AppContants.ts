@@ -1,4 +1,4 @@
 export enum pageConstants {
-    PLANETS='PLANETS',
-    PEOPLE='PEOPLE'
+  PLANETS = "PLANETS",
+  PEOPLE = "PEOPLE",
 }
